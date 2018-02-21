@@ -11,7 +11,6 @@ import time
 import pandas as pd
 import bfx
 import huobi_USDT
-import pymssql
 from okex2 import OKCoinFuture as ok
 mykey=ok('www.okex.com','Public Key','Private Key')
 
