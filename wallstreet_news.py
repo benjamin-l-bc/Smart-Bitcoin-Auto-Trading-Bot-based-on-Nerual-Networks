@@ -9,12 +9,6 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 from snownlp import SnowNLP
-jieba.add_word('比特币')
-jieba.add_word('以太坊')
-jieba.add_word('智能合约')
-jieba.add_word('虚拟币')
-jieba.add_word('区块链')
-jieba.add_word('加密货币')
 def wallstr_news():
     user_agent='Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
     headers={'User-Agent':user_agent}
