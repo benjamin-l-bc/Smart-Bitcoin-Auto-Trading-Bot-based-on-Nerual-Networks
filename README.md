@@ -6,15 +6,15 @@
 ##### 3. 用okex API进行自动交易。
 
 提前安装
-'pip3 install sklearn'
-'pip3 install requests'
-'pip3 install BeautifulSoup'
+`pip3 install sklearn`
+`pip3 install requests`
+`pip3 install BeautifulSoup`
 
 代码尚未完成并会不断进行完善~
 
 ###### 3/6/2018 更新 
-###### 1.从华尔街见闻的区块链频道抓取新闻，使用SnowNLP分析新闻的情绪，news_emotion作为最后分析的feature
-###### 2.从8btc论坛抓取新闻，使用SnowNLP分析论坛帖子和回帖的情绪，8btc_emotion作为最后分析的feature
+<br> 1.从华尔街见闻的区块链频道抓取新闻，使用SnowNLP分析新闻的情绪，news_emotion作为最后分析的feature
+<br> 2.从8btc论坛抓取新闻，使用SnowNLP分析论坛帖子和回帖的情绪，8btc_emotion作为最后分析的feature
 
 ###### 3/7/2018 更新 
-###### Adding solutions for disconnect conditions
+<br> 解决因为网络问题代码中断问题 Adding solutions for disconnect conditions
