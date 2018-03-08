@@ -6,9 +6,10 @@
 ##### 3. 用okex API进行自动交易。
 
 提前安装
-`pip3 install sklearn`
-`pip3 install requests`
-`pip3 install BeautifulSoup`
+<br>`pip3 install sklearn` -- For machine learning purpose
+<br>`pip3 install requests` -- Access to webpage
+<br>`pip3 install BeautifulSoup` -- Formalize webpage
+<br>`pip3 install snownlp` -- Analyze emotion of sentenses in Chinese
 
 代码尚未完成并会不断进行完善~
 
