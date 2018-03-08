@@ -22,9 +22,9 @@ You need to install in advance.
 
 ###### Updates 3/6/2018 
 <br> 1.从华尔街见闻的区块链频道抓取新闻，使用SnowNLP分析新闻的情绪，news_emotion作为最后分析的feature
-get the news from wallstreet cn(https://wallstreetcn.com/) blockchain channel. Analyze the emotion thru SnowNLP. Input as a feature.
+<br> get the news from wallstreet cn(https://wallstreetcn.com/) blockchain channel. Analyze the emotion thru SnowNLP. Input as a feature.
 <br> 2.从8btc论坛抓取新闻，使用SnowNLP分析论坛帖子和回帖的情绪，8btc_emotion作为最后分析的feature
-get the posts from Chinese biggest BTC forum--8btc cn(https://8btc.com/) blockchain channel. Analyze the emotion thru SnowNLP. Input as a feature.
+<br> get the posts from Chinese biggest BTC forum--8btc cn(https://8btc.com/) blockchain channel. Analyze the emotion thru SnowNLP. Input as a feature.
 (Will Update and input the emotion from Reddit in the future)
 
 ###### Updates 3/7/2018 
