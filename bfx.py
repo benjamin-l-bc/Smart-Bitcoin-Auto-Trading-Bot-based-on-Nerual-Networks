@@ -22,8 +22,8 @@ def bfx_volumn():
     for i in volumn:
         if i['type']=='buy':
             buy_volumn=buy_volumn+float(i['amount'])
-    else:
-        sell_volumn=sell_volumn+float(i['amount'])
+        else:
+            sell_volumn=sell_volumn+float(i['amount'])
     return(buy_volumn,sell_volumn)
 def bfx_books():
     url2 = "https://api.bitfinex.com/v1/book/btcusd"
