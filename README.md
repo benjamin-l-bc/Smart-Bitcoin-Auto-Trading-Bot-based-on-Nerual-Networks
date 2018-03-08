@@ -11,7 +11,7 @@
 ## run input_data.py
 
 需要提前安装
-You need to install in advance.
+You need to install below packages before run input_data.py
 <br>`pip install sklearn` -- For machine learning purpose
 <br>`pip install requests` -- Access to webpage
 <br>`pip install BeautifulSoup` -- Formalize webpage
