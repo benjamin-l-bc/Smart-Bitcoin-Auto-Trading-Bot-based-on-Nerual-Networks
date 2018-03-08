@@ -1,22 +1,22 @@
 # bitcoin autotrade - OKex
-
-## The goal for this programme is to autotrade the future in OKex thru machine learning result.
 ## 目标是用机器学习自动交易okex的bitcoin季度和周的期货合约进行套利。
+## The goal for this programme is to autotrade the future in OKex thru machine learning result.
 ##### 1. 按照时间120秒间隔抓取OKEX，huobi_USDT,bfx上现货价格。
-##### 1. get 1)the trade data from Okex,bfx. 2)USDT OTC price from Huobi.pro 3).Emotion from News and Forum
+#####    get 1)the trade data from Okex,bfx. 2)USDT OTC price from Huobi.pro 3).Emotion from News and Forum
 ##### 2. 用sklearn进行机器学习找出最佳策略最大化收益。
-##### 2. find the best trading strategy thru machine learning using sklearn to optimize profit.
+#####    find the best trading strategy thru machine learning using sklearn to optimize profit.
 ##### 3. 用okex API进行自动交易。
-##### 3. AutoTrade Okex Bitcoin future thru Okex API
+#####    AutoTrade Okex Bitcoin future thru Okex API
 
 ## run input_data.py
 
 需要提前安装
 You need to install in advance.
-<br>`pip3 install sklearn` -- For machine learning purpose
-<br>`pip3 install requests` -- Access to webpage
-<br>`pip3 install BeautifulSoup` -- Formalize webpage
-<br>`pip3 install snownlp` -- Analyze emotion of sentenses in Chinese
+<br>`pip install sklearn` -- For machine learning purpose
+<br>`pip install requests` -- Access to webpage
+<br>`pip install BeautifulSoup` -- Formalize webpage
+<br>`pip install snownlp` -- Analyze emotion of sentenses in Chinese
+<br>`pip install pyodbc` -- connect to SQL Server DB
 
 代码尚未完成并会不断进行完善~ Will update the code from time to time.
 
