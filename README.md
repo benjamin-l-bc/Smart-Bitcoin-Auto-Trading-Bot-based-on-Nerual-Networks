@@ -20,6 +20,10 @@ You need to install below packages before run input_data.py
 
 代码尚未完成并会不断进行完善~ Will update the code from time to time.
 
+<br> ------------------------------------------------------------------------------
+
+# Updates by Date
+
 ###### Updates 3/6/2018 
 <br> 1.从华尔街见闻的区块链频道抓取新闻，使用SnowNLP分析新闻的情绪，news_emotion作为最后分析的feature
 <br> get the news from wallstreet cn(https://wallstreetcn.com/) blockchain channel. Analyze the emotion thru SnowNLP. Input as a feature.
