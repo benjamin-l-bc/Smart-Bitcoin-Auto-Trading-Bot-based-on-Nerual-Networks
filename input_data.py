@@ -21,8 +21,8 @@ con=pyodbc.connect('DRIVER={SQL Server};SERVER=server;DATABASE=db;UID=id;PWD=pas
 #connect to SQL Server Database
 def input_data(tt):
     #input the number of rows you want to input
+	j=0
     for i in range(0,tt):
-        j=0
         #count number of rows
         try:
             ok0330=float(mykey.future_ticker('btc_usd','quarter')['ticker']['last'])
