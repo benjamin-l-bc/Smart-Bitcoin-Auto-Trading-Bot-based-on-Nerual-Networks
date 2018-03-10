@@ -38,8 +38,5 @@ You need to install below packages before run input_data.py
 <br> 1.fixed a bug in bfx.py
 <br> 2.*Changed the data storage from csv to SQL server database.Better for further machine learning process.
 
-###### Updates 3/9/2018
-<br> 1.Adding Analytic scripts(to be competed)
-
 ###### Updates 3/10/2018
-<br> 1.A few updates on Analytic scripts.Adding some features such as quarterpre30,quarterpre20,quarterpre10.
+<br> Start another project named Bitcoin_price_prediction to predict bitcoin trend. Will merge these two projects after finished.
