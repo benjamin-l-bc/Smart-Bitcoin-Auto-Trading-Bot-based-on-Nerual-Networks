@@ -5,7 +5,7 @@
 <br> quarterly and weekly bitcoin price from OKEX
 <br> asks/bids info and last price from Bitfinex (Will add funding data later)
 <br> USDT OTC price from Huobi.pro
-<br> Emotion from news and forum (Wallstreet.cn and 8btc , will add reddit and CCN later)
+<br> Emotion from news and forum (Wallstreet.cn and 8btc , will add reddit and CCN later)(DELETED due to effeciency reason)
 
 After the data prediction, will start another project to autotrade the future in OKex thru machine learning result.
 
@@ -38,3 +38,6 @@ You need to install below packages before run input_data.py
 
 ###### Updates 3/10/2018
 <br> Start another project named Bitcoin_price_prediction to predict bitcoin trend.
+
+###### Updates 3/14/2018
+<br> DELETED Emotion from forum due to effeciency reason
