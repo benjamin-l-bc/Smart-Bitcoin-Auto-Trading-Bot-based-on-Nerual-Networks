@@ -39,15 +39,13 @@ def input_data(tt):
             #get USDT price from huobi.pro
             news_emotion=float(wallstreet_news.wallstr_news())
             #get news emotion from wallstreet news blockchain channel
-            e_btc_emotion=float(eight_btc_emotion.get_8btc_emotion(1))
-            #get emotion from 8btc
             cursor=con.cursor()
-            cursor.execute("insert into dbo.BitcoinTradeHistory values(getdate(),{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12})".format(ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion,e_btc_emotion))
+            cursor.execute("insert into dbo.BitcoinTradeHistory values(getdate(),{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})".format(ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion))
             #insert into SQL Server Database
             con.commit()
             j=j+1
             print('collected {0} rows'.format(j))
-            time.sleep(120) 
+            time.sleep(60) 
         except:
             print('connect error')             
     print('done')
