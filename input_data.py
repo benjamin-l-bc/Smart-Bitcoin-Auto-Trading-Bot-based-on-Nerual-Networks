@@ -13,7 +13,6 @@ import bfx
 import huobi_USDT
 import wallstreet_news
 from okex2 import OKCoinFuture as ok
-import eight_btc_emotion
 import pyodbc
 mykey=ok('www.okex.com','Public-Key','Private-Key')
 #replace the Public-Key and Private-Key with your OKex API access
