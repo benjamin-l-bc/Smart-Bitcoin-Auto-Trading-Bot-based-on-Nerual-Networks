@@ -41,3 +41,6 @@ You need to install below packages before run input_data.py
 
 ###### Updates 3/14/2018
 <br> DELETED Emotion from forum due to effeciency reason
+
+###### Updates 3/14/2018
+<br>adding prediction.py (To be Updated)
