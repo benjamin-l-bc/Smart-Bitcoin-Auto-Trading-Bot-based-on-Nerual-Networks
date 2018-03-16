@@ -37,7 +37,7 @@ def test_data(tt):
             bfx_last_price=bfx.bfx_ticker()
             exchange_rate=float(mykey.exchange_rate()['rate'])
             huobiUSDT=float(huobi_USDT.get_usdt_price())
-            #huobi USDT price
+            #huobi USDT OTC price
             news_emotion=float(wallstreet_news.wallstr_news())
             #News emotion from wallstreet cn
             if i==0:
@@ -60,4 +60,3 @@ def test_data(tt):
         except:
             print('connect error')          
     return raw
-    

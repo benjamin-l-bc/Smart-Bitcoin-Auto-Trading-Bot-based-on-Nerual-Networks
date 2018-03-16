@@ -4,33 +4,32 @@ Created on Fri Mar 16 20:55:57 2018
 
 @author: v-beshi
 """
-
 import pandas as pd
 
 def get_agg_data(raw_data):
     #input the data resource
 
     raw_data['USDT_exceed']=raw_data['huobi_USDT']-raw_data['exchange_rate']
-
+    
+    lastloc=raw_data.index.get_values()[len(raw_data.index.get_values())-1]
+    firstloc=raw_data.index.get_values()[0]
+    
     pre_price15=[]
-    for i in range(0,15):
+    for i in range(0,14):
         pre_price15.append(0)
-    for i in range(15,len(raw_data)):
-        pre_price15.append((raw_data['ok0330'][i]-raw_data['ok0330'][i-15])/(raw_data['ok0330'][i-15]))
+    pre_price15.append((raw_data['ok0330'][lastloc]-raw_data['ok0330'][firstloc])/(raw_data['ok0330'][lastloc]))
     pre_price15=pd.Series(pre_price15,name='pre_price15')
 
     pre_price10=[]
-    for i in range(0,10):
+    for i in range(0,14):
         pre_price10.append(0)
-    for i in range(10,len(raw_data)):
-        pre_price10.append((raw_data['ok0330'][i]-raw_data['ok0330'][i-10])/(raw_data['ok0330'][i-10]))
+    pre_price10.append((raw_data['ok0330'][lastloc]-raw_data['ok0330'][lastloc-10])/(raw_data['ok0330'][lastloc]))
     pre_price10=pd.Series(pre_price10,name='pre_price10')
 
     pre_price5=[]
-    for i in range(0,5):
+    for i in range(0,14):
         pre_price5.append(0)
-    for i in range(5,len(raw_data)):
-        pre_price5.append((raw_data['ok0330'][i]-raw_data['ok0330'][i-5])/(raw_data['ok0330'][i-5]))
+    pre_price5.append((raw_data['ok0330'][lastloc]-raw_data['ok0330'][lastloc-5])/(raw_data['ok0330'][lastloc]))
     pre_price5=pd.Series(pre_price5,name='pre_price5')
 
     pre_bfx=[0]
