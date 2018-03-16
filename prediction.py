@@ -37,29 +37,27 @@ def test_data(tt):
             bfx_last_price=bfx.bfx_ticker()
             exchange_rate=float(mykey.exchange_rate()['rate'])
             huobiUSDT=float(huobi_USDT.get_usdt_price())
-            #huobi USDT价格
+            #huobi USDT price
             news_emotion=float(wallstreet_news.wallstr_news())
-            #华尔街见闻区块链板块新闻情绪
+            #News emotion from wallstreet cn
             if i==0:
                 raw=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
             if (i>0)&(i<=15):
                 raw2=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
                 raw=raw.append(raw2)
-                
             if i>15:
                 raw3=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
                 raw=raw.append(raw3)
                 raw=raw.drop([i-16])
+                feature=get_agg_data(raw)
+                PCA_ed_feature=pca.transform(feature)
+                next_5=next5.predict(PCA_ed_feature)
+                next_10=next10.predict(PCA_ed_feature)
+                next_15=next15.predict(PCA_ed_feature) 
+                print([next_5,next_10,next_15])
             i=i+1
             print(raw)
         except:
-            print('connect error')
-        
+            print('connect error')          
     return raw
-
-    #PCA_ed_feature=pca.transform(feature)
-    #next_5=next5.predict(PCA_ed_feature)
-    #next_10=next10.predict(PCA_ed_feature)
-    #next_15=next15.predict(PCA_ed_feature)
-    #result=pd.DataFrame({'next_5':next_5,'next_10':next_10,'next_15':next_15})
     
