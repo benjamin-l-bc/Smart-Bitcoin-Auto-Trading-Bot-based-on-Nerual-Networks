@@ -14,6 +14,7 @@ import bfx
 import huobi_USDT
 import wallstreet_news
 from okex2 import OKCoinFuture as ok
+from preprocessing import d_pro
 
 mykey=ok('www.okex.com','Public-Key','Private-Key')
 
@@ -28,33 +29,33 @@ def test_data(tt):
             DateTime=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             ok0330=float(mykey.future_ticker('btc_usd','quarter')['ticker']['last'])
             ok_thisweek=float(mykey.future_ticker('btc_usd','this_week')['ticker']['last'])
-            bfx_bids_wall=bfx.bfx_books()['bids_wall']
-            bfx_asks_wall=bfx.bfx_books()['asks_wall']
-            bfx_total_bids=bfx.bfx_books()['total_bids']
-            bfx_total_asks=bfx.bfx_books()['total_asks']
-            bfx_buy_volumn=bfx.bfx_volumn()[0]
-            bfx_sell_volumn=bfx.bfx_volumn()[1]
-            bfx_last_price=bfx.bfx_ticker()
+            bfx_bids_wall=float(bfx.bfx_books()['bids_wall'])
+            bfx_asks_wall=float(bfx.bfx_books()['asks_wall'])
+            bfx_total_bids=float(bfx.bfx_books()['total_bids'])
+            bfx_total_asks=float(bfx.bfx_books()['total_asks'])
+            bfx_buy_volumn=float(bfx.bfx_volumn()[0])
+            bfx_sell_volumn=float(bfx.bfx_volumn()[1])
+            bfx_last_price=float(bfx.bfx_ticker())
             exchange_rate=float(mykey.exchange_rate()['rate'])
             huobiUSDT=float(huobi_USDT.get_usdt_price())
             #huobi USDT OTC price
             news_emotion=float(wallstreet_news.wallstr_news())
             #News emotion from wallstreet cn
             if i==0:
-                raw=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
+                raw=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobi_USDT','news_emotion'])
             if (i>0)&(i<=15):
-                raw2=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
+                raw2=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobi_USDT','news_emotion'])
                 raw=raw.append(raw2)
             if i>15:
-                raw3=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
+                raw3=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobi_USDT','news_emotion'])
                 raw=raw.append(raw3)
                 raw=raw.drop([i-16])
-                #feature=d_pro(raw)
+                feature=d_pro(raw)
                 #PCA_ed_feature=pca.transform(feature)
-                #next_5=next5.predict(PCA_ed_feature)
-                #next_10=next10.predict(PCA_ed_feature)
-                #next_15=next15.predict(PCA_ed_feature) 
-                #print([next_5,next_10,next_15])
+                #next_5=next5.predict(PCA_ed_feature)[15]
+                #next_10=next10.predict(PCA_ed_feature)[15]
+                #next_15=next15.predict(PCA_ed_feature)[15]
+                print([next_5,next_10,next_15])
             i=i+1
             print(raw)
         except:
