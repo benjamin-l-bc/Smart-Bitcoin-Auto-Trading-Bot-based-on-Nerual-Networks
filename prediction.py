@@ -49,7 +49,7 @@ def test_data(tt):
                 raw3=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobiUSDT','news_emotion'])
                 raw=raw.append(raw3)
                 raw=raw.drop([i-16])
-                feature=get_agg_data(raw)
+                feature=d_pro(raw)
                 PCA_ed_feature=pca.transform(feature)
                 next_5=next5.predict(PCA_ed_feature)
                 next_10=next10.predict(PCA_ed_feature)
