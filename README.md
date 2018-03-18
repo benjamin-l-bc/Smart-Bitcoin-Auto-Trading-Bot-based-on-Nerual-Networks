@@ -1,5 +1,5 @@
 # Bitcoin Trade Data
-## The goal for this project is 1)to get bitcoin related data to predict bitcoin price. 2)Predict Bitcoin future price 3)Auto-trading based on the predicted result of 2)
+## The goal for this project is 1)to get bitcoin related data to predict bitcoin price. 2)Predict Bitcoin future price 3)Auto-trading based on the prediction
 
 #### The related data including:
 <br> quarterly and weekly bitcoin price from OKEX
@@ -10,7 +10,7 @@
 #### Machine Learning Model:
 <br> Neural Network
 
-### Process
+### Steps
 #### 1) run input_data.py to collect data to SQL Database.
 #### 2) https://github.com/benjaminshi02003220/Bitcoin_price_prediction Download this project and run NNC.py to build up the model based on  the data in SQL Database
 #### 3) Copy the 4 model file from Bitcoin_price_prediction folder to bitcion_trade_data folder. Run prediction.py to 1.predict price 2.Auto-Trading based on the result(To be completed)
