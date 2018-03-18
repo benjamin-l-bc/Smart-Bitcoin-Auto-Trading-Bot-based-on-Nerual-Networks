@@ -54,5 +54,5 @@ def d_pro(raw_data):
     raw_data=raw_data.reset_index()
     raw_data=raw_data.drop(['ok0330','DateTime','ok_thisweek','huobi_USDT','exchange_rate','bfx_last_price','news_emotion','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn'],axis=1)
     agg_data=pd.concat([raw_data,pre_price15,pre_price10,pre_price5,pre_bfx,pre_news10],axis=1)
-    raw_data.drop('index',axis=1)
+    agg_data=agg_data.drop('index',axis=1)
     return(agg_data)

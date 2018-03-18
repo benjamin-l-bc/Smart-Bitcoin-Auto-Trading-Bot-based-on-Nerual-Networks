@@ -51,13 +51,15 @@ def test_data(tt):
                 raw=raw.append(raw3)
                 raw=raw.drop([i-16])
                 feature=d_pro(raw)
-                #PCA_ed_feature=pca.transform(feature)
-                #next_5=next5.predict(PCA_ed_feature)[15]
-                #next_10=next10.predict(PCA_ed_feature)[15]
-                #next_15=next15.predict(PCA_ed_feature)[15]
+                PCA_ed_feature=pca.transform(feature)
+                next_5=next5.predict(PCA_ed_feature)[15]
+                next_10=next10.predict(PCA_ed_feature)[15]
+                next_15=next15.predict(PCA_ed_feature)[15]
+				#predict the future bitcoin price
                 print([next_5,next_10,next_15])
             i=i+1
             print(raw)
+			time.sleep(60)
         except:
             print('connect error')          
     return raw
