@@ -50,12 +50,14 @@ def test_data(tt):
                 raw3=pd.DataFrame([[DateTime,ok0330,ok_thisweek,bfx_bids_wall,bfx_asks_wall,bfx_total_bids,bfx_total_asks,bfx_buy_volumn,bfx_sell_volumn,bfx_last_price,exchange_rate,huobiUSDT,news_emotion]],index=[i],columns=['DateTime','ok0330','ok_thisweek','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn','bfx_last_price','exchange_rate','huobi_USDT','news_emotion'])
                 raw=raw.append(raw3)
                 raw=raw.drop([i-16])
-                feature=d_pro(raw)
+                feature=d_pro(raw) 
+				#Data Preprocessing
                 PCA_ed_feature=pca.transform(feature)
+				#PCA Features
                 next_5=next5.predict(PCA_ed_feature)[15]
                 next_10=next10.predict(PCA_ed_feature)[15]
                 next_15=next15.predict(PCA_ed_feature)[15]
-				#predict the future bitcoin price
+				#predict the future bitcoin price(5min/10min/15min)
                 print([next_5,next_10,next_15])
             i=i+1
             print(raw)

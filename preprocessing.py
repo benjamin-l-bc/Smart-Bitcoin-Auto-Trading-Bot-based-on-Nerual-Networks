@@ -31,18 +31,24 @@ def d_pro(raw_data):
         pre_price5.append(0)
     pre_price5.append((raw_data['ok0330'][lastloc]-raw_data['ok0330'][lastloc-5])/(raw_data['ok0330'][lastloc-5]))
     pre_price5=pd.Series(pre_price5,name='pre_price5')
+	
+	#get the bitcoin quarterly future price change% in last 5min/10min/15min from OKEX
 
     pre_bfx=[]
     for i in range(0,15):
         pre_bfx.append(0)
     pre_bfx.append((raw_data['bfx_last_price'][lastloc]-raw_data['bfx_last_price'][lastloc-1])/(raw_data['bfx_last_price'][lastloc-1]))
     pre_bfx=pd.Series(pre_bfx,name='pre_bfx')
+	
+	#get the bitcoin price change% in last 1min from Bitfinex
 
     pre_news10=[]
     for i in range(0,15):
         pre_news10.append(0)
     pre_news10.append((raw_data['news_emotion'][lastloc]-raw_data['news_emotion'][lastloc-10])/(raw_data['news_emotion'][lastloc-10]))
     pre_news10=pd.Series(pre_news10,name='pre_news10')
+	
+	#get the news emotion change% in last 10min from wallstreet.cn
     
     raw_data['bids_wall']=raw_data['bfx_bids_wall']/100
     raw_data['asks_wall']=raw_data['bfx_asks_wall']/100
@@ -50,6 +56,8 @@ def d_pro(raw_data):
     raw_data['total_asks']=raw_data['bfx_total_asks']/100
     raw_data['buy_volumn']=raw_data['bfx_buy_volumn']/50
     raw_data['sell_volumn']=raw_data['bfx_sell_volumn']/50
+	
+	# data scaling
             
     raw_data=raw_data.reset_index()
     raw_data=raw_data.drop(['ok0330','DateTime','ok_thisweek','huobi_USDT','exchange_rate','bfx_last_price','news_emotion','bfx_bids_wall','bfx_asks_wall','bfx_total_bids','bfx_total_asks','bfx_buy_volumn','bfx_sell_volumn'],axis=1)
