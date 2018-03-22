@@ -57,6 +57,10 @@ def test_data(tt):
                 next_5=next5.predict(PCA_ed_feature)[15]
                 next_10=next10.predict(PCA_ed_feature)[15]
                 next_15=next15.predict(PCA_ed_feature)[15]
+				if next_5+next_10+next_15>2:
+				#input auto-trading code to long
+				if next_5+next_10+next_15=0:
+				#input auto-trading code to short
 				#predict the future bitcoin price(5min/10min/15min)
                 print([next_5,next_10,next_15])
             i=i+1
