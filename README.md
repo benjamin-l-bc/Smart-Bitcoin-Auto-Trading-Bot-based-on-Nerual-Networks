@@ -52,3 +52,6 @@ You need to install below packages before run input_data.py
 
 ###### Updates 3/18/2018
 <br>Fixed some bugs and complete the real-time prediction. (prediction.py). Next step is to accomplish the auto-trading based on the prediction result~ 
+
+###### Updates 3/28/2018
+<br>3 predicted outcomes: Next_5,Next_10,Next_15 refer to the bitcoin future price will raise or drop based on our prediction , 1 means raise ,0 means drop. If two of the three outcomes are 1, we can long bitcoin future and will sell it after 15 minutes/or a certain percentage of profit(to be tested)
