@@ -57,12 +57,12 @@ def test_data(tt):
                 next_5=next5.predict(PCA_ed_feature)[15]
                 next_10=next10.predict(PCA_ed_feature)[15]
                 next_15=next15.predict(PCA_ed_feature)[15]
-                if(next_5)+(next_10)+(next_15)>1:
+                if(next_5)+(next_10)+(next_15)>2:
                 #trading code to long
-                      depth=mykey.future_depth('btc_usd','quarter','2')['asks']
-                      print(depth)
                       print('buy buy buy')
-                print([next_5,next_10,next_15])                   
+                      mykey.future_trade('btc_usd','quarter',price=price,amount=10,tradeType=1,matchPrice=1,leverRate=20)
+					  #long bitcoin
+                print([next_5,next_10,next_15])                 
             i=i+1
             print(raw)
             time.sleep(60)
