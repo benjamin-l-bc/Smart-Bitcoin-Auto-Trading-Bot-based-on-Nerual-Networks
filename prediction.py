@@ -58,12 +58,17 @@ def test_data(tt):
                 next_10=next10.predict(PCA_ed_feature)[15]
                 next_15=next15.predict(PCA_ed_feature)[15]
                 if(next_5)+(next_10)+(next_15)>2:
-                #trading code to long
-                      print('buy buy buy')
-                      mykey.future_trade('btc_usd','quarter',price=price,amount=10,tradeType=1,matchPrice=1,leverRate=20)
-					  #long bitcoin
-                print([next_5,next_10,next_15])                 
+                    print('buy buy buy')
+                    mykey.future_trade('btc_usd','quarter',amount=10,tradeType=1,matchPrice=1,leverRate=20)
+                    longtime.append(i)
+                    #record the time we long bitcoin
+                print([next_5,next_10,next_15])
             i=i+1
+            for time in longtime:
+                if i>time+15:
+                    mykey.future_trade('btc_usd','quarter',amount=10,tradeType=3,matchPrice=1,leverRate=20)
+                    longtime.remove(time)
+                    #sell the future long ticket
             print(raw)
             time.sleep(60)
         except:
