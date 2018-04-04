@@ -1,5 +1,5 @@
 # Bitcoin Trade Data
-## The goal for this project is 1)to get bitcoin related data to predict bitcoin price. 2)Predict Bitcoin future price 3)Auto-trading based on the prediction
+## The goal for this project is 1)to get bitcoin related data to predict bitcoin price. 2)Predict Bitcoin future price 3)Auto-trading based on the prediction(Long Only)
 
 #### The related data including:
 <br> quarterly and weekly bitcoin price from OKEX
@@ -58,3 +58,6 @@ You need to install below packages before run input_data.py
 
 ###### Updates 3/28/2018
 <br>3 predicted outcomes: Next_5,Next_10,Next_15 refer to the bitcoin future price will raise or drop based on our prediction , 1 means raise ,0 means drop. If two of the three outcomes are 1, we can long bitcoin future and will sell it after 15 minutes/or a certain percentage of profit(to be tested)
+
+###### Updates 4/4/2018
+<br>Adding future trading process
