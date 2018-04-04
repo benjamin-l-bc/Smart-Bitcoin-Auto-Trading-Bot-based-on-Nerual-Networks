@@ -60,4 +60,4 @@ You need to install below packages before run input_data.py
 <br>3 predicted outcomes: Next_5,Next_10,Next_15 refer to the bitcoin future price will raise or drop based on our prediction , 1 means raise ,0 means drop. If two of the three outcomes are 1, we can long bitcoin future and will sell it after 15 minutes/or a certain percentage of profit(to be tested)
 
 ###### Updates 4/4/2018
-<br>Adding future trading process
+<br>Adding future trading process(Long and sell after 15 minutes)
