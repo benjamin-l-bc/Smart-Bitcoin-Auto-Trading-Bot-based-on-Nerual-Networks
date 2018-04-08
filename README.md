@@ -11,7 +11,7 @@
 3 predicted outcomes: Next_5,Next_10,Next_15 refer to the bitcoin future price will raise or drop in next 5/10/15 minutes based on our prediction 
 
 #### Machine Learning Model:
-<br> Neural Network
+<br> Neural Network (Prepare to use deeplearning model to fit the data in the future)
 
 ### Steps
 #### 1) run input_data.py to collect data to SQL Database.
