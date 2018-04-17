@@ -25,6 +25,7 @@ You need to install below packages before run input_data.py
 <br>`pip install snownlp` -- Analyze emotion of sentenses in Chinese
 <br>`pip install pyodbc` -- connect to SQL Server DB
 <br>`pip install sklearn` -- Machine Learning Model
+<br>`pip install tensorflow` -- install tensorflow
 
  Will update the code from time to time.
 
